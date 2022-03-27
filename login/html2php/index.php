@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php session_start(); ?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -40,7 +40,7 @@
 
                     <!-- method to use the form properly, post to post the informations name and value recieved -->
                     <!-- action are url that is called to perform action -->
-                    <form method="post" action="">
+                    <form method="post" action="./connection/login.php">
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-prepend">
@@ -59,6 +59,12 @@
                         </div>
                         <div class="form-group login-submit mt-5">
                             <button type="submit" name="submit" class="btn btn-primary btn-block"> Login </button>
+                            <div id="warning">
+                                <?php if(isset($_SESSION['Error'])){
+                                    echo $_SESSION['Error'];
+                                    unset($_SESSION['Error']);
+                                } ?>
+                            </div>
                         </div>
                         <div class="form-group row login-tools">
                             <div class="col-sm-6">
