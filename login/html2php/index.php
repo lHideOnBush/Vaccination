@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,12 +34,15 @@
                 </div>
                 
                 <div class="col-md-6 login-form">
-                    <img class="logo-img" src="logo.png" alt="Jugadudev" width="200">
+                    <img class="logo-img" src="./assets/img/login_image.png" alt="Jugadudev" width="200">
                     <span class="form-title text-center mt-4 mb-4">Login to your account</span>
+
+                    <!-- Magulo Pag kakatab mo -->
 
                     <!-- method to use the form properly, post to post the informations name and value recieved -->
                     <!-- action are url that is called to perform action -->
-                    <form method="post" action="">
+                    <!-- id to be identified by js -->
+                    <form method="post" action="./connections/login.php" id="loginForm">
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-prepend">
@@ -56,7 +60,13 @@
                                     </div>
                                 </div>
                                     <div class="form-group login-submit mt-5">
-                                    <a class="btn btn-primary btn-block" href="/login">Login</a>
+                                    <a class="btn btn-primary btn-block" href="javascript:$('loginForm').submit();" onclick="checkLogin()">Login</a>
+                                    <div id="warning">
+                                        <?php if(isset($_SESSION['Error'])){
+                                            echo $_SESSION['Error'];
+                                            unset($_SESSION['Error']);
+                                        } ?>
+                                    </div>
                         </div>
                         <div class="form-group row login-tools">
                         <div class="col-sm-6">
@@ -66,7 +76,7 @@
                                     me</span>                                   
                             </label>
                         </div>
-                        <div class="col-sm-6 pt-2 text-sm-right login-forgot-password"><a href="/forgotpassword">Forgot 
+                        <div class="col-sm-6 pt-2 text-sm-right login-forgot-password" id="check"><a href="/forgotpassword">Forgot 
                             Password ?</a></div>                       
                         </div>
                     </form>
@@ -75,6 +85,7 @@
     </div>
 </body>
 
-
+<!-- this js is used for the a(anchor) to have a function-->
+<script src="./assets/js/login.js"></script>
 
 </html>
