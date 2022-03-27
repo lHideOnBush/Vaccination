@@ -33,8 +33,10 @@
                 </div>
                 
                 <div class="col-md-6 login-form">
-                    <img class="logo-img" src="logo.png" alt="Jugadudev" width="200">
+                    <img class="logo-img" src="./assets/img/login_logo.png" alt="Jugadudev" width="200">
                     <span class="form-title text-center mt-4 mb-4">Login to your account</span>
+
+                    <!-- di maayos yung pagtatab mo dito -->
 
                     <!-- method to use the form properly, post to post the informations name and value recieved -->
                     <!-- action are url that is called to perform action -->
@@ -46,28 +48,28 @@
                                 </div>
 
                                 <input name="username" type="text" class="form-control" placeholder="Username" autocomplete="off"/>  <!-- name is used for the identification when posted -->
-                                </div>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <i class="fa fa-lock"></i>
-                                        </div>   
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <i class="fa fa-lock"></i>
+                                </div>   
 
                                 <input name="password" type="password"  class="form-control"placeholder="Password"autocomplete="off"/>
-                                    </div>
-                                </div>
-                                    <div class="form-group login-submit mt-5">
-                                    <a class="btn btn-primary btn-block" href="/login">Login</a>
+                            </div>
+                        </div>
+                        <div class="form-group login-submit mt-5">
+                            <button type="submit" name="submit" class="btn btn-primary btn-block"> Login </button>
                         </div>
                         <div class="form-group row login-tools">
-                        <div class="col-sm-6">
-                            <label class="custom-control custom-checkbox mt-2">
+                            <div class="col-sm-6">
+                                <label class="custom-control custom-checkbox mt-2">
                                 <input class="custom-control-input" type="checkbox"><span
                                     class="custom-control-label">Remember 
                                     me</span>                                   
-                            </label>
-                        </div>
-                        <div class="col-sm-6 pt-2 text-sm-right login-forgot-password"><a href="/forgotpassword">Forgot 
-                            Password ?</a></div>                       
+                                </label>
+                            </div>
+                            <div class="col-sm-6 pt-2 text-sm-right login-forgot-password"><a href="/forgotpassword">Forgot 
+                                Password ?</a></div>                       
                         </div>
                     </form>
                 </div>
